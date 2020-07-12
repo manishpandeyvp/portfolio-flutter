@@ -115,7 +115,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  AboutDesktopScreen()));
+                                                  AboutDesktopScreen()),);
                                     });
                                   },
                                   child: Text(

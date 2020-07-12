@@ -36,7 +36,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                   color: Color(0xFFFDFDFD),
                   image: DecorationImage(
                       alignment: Alignment.bottomRight,
-                      image: AssetImage('profile.png'),
+                      image: AssetImage('assets/profile.png'),
                       fit: BoxFit.scaleDown)),
             ),
             Container(

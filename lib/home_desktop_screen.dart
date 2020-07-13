@@ -2,14 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:social_media_buttons/social_media_buttons.dart';
 import 'about_desktop.dart';
+import 'project_desktop_screen.dart';
 
 class HomeDesktopScreen extends StatefulWidget {
-  static final style = TextStyle(
-    fontSize: 30,
-    fontFamily: "Billy",
-    fontWeight: FontWeight.w600,
-  );
-
   @override
   _HomeDesktopScreenState createState() => _HomeDesktopScreenState();
 }
@@ -112,10 +107,11 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                   onTap: () {
                                     setState(() {
                                       Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  AboutDesktopScreen()),);
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                AboutDesktopScreen()),
+                                      );
                                     });
                                   },
                                   child: Text(
@@ -162,7 +158,16 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                     });
                                   },
                                   hoverColor: Color(0xFFDA4453),
-                                  onTap: () {},
+                                  onTap: () {
+                                    setState(() {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ProjectDesktopScreen()),
+                                      );
+                                    });
+                                  },
                                   child: Text(
                                     'PROJECTS',
                                     style: TextStyle(
@@ -366,7 +371,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                             },
                             onTap: () {},
                             child: SocialMediaButton.linkedin(
-                              url: null,
+                              url:
+                                  "https://www.linkedin.com/in/manish-pandey-8a4213179/",
                               size: size.height * 0.03,
                               color: linkedInColor,
                             ),
@@ -393,7 +399,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                             },
                             onTap: () {},
                             child: SocialMediaButton.github(
-                              url: null,
+                              url: "https://github.com/manishpandeyvp",
                               size: size.height * 0.03,
                               color: githubColor,
                             ),
@@ -447,7 +453,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                             },
                             onTap: () {},
                             child: SocialMediaButton.facebook(
-                              url: null,
+                              url: "https://www.facebook.com/manishpandeyvp/",
                               size: size.height * 0.03,
                               color: fbColor,
                             ),
@@ -474,7 +480,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                             },
                             onTap: () {},
                             child: SocialMediaButton.instagram(
-                              url: null,
+                              url:
+                                  "https://www.instagram.com/_.wubba_lubba_dub_dub/",
                               size: size.height * 0.03,
                               color: instagramColor,
                             ),

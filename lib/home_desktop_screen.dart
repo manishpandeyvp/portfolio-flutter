@@ -324,7 +324,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                   MaterialButton(
                                     onPressed: () {
                                       setState(() {
-                                        _launched = _launchInBrowser("");
+                                        _launched = _launchInBrowser(
+                                            "https://drive.google.com/file/d/1-azKIiiD1QvKXeUiUmW_akwM5f_lpFbn/view?usp=sharing");
                                       });
                                     },
                                     color: Color(0xFFDA4453),

@@ -323,7 +323,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                         style: TextStyle(
                                             color: preFinalYearColor
                                                 .withOpacity(0.7),
-                                            fontSize: size.height * 0.018,
+                                            fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
@@ -341,7 +341,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                           style: TextStyle(
                                               color: Color(0xFF434A54)
                                                   .withOpacity(0.7),
-                                              fontSize: size.height * 0.018,
+                                              fontSize: size.height * 0.02,
                                               fontWeight: FontWeight.w100,
                                               letterSpacing: 1,
                                               fontFamily: 'ConcertOne'),
@@ -454,7 +454,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                         style: TextStyle(
                                             color: secondYearColor
                                                 .withOpacity(0.7),
-                                            fontSize: size.height * 0.018,
+                                            fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
@@ -474,7 +474,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                           style: TextStyle(
                                               color: Color(0xFF434A54)
                                                   .withOpacity(0.7),
-                                              fontSize: size.height * 0.018,
+                                              fontSize: size.height * 0.02,
                                               fontWeight: FontWeight.w100,
                                               letterSpacing: 1,
                                               fontFamily: 'ConcertOne'),
@@ -587,7 +587,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                         style: TextStyle(
                                             color:
                                                 firstYearColor.withOpacity(0.7),
-                                            fontSize: size.height * 0.018,
+                                            fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
@@ -607,7 +607,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                           style: TextStyle(
                                               color: Color(0xFF434A54)
                                                   .withOpacity(0.7),
-                                              fontSize: size.height * 0.018,
+                                              fontSize: size.height * 0.02,
                                               fontWeight: FontWeight.w100,
                                               letterSpacing: 1,
                                               fontFamily: 'ConcertOne'),
@@ -719,7 +719,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                         style: TextStyle(
                                             color: schoolDaysColor
                                                 .withOpacity(0.7),
-                                            fontSize: size.height * 0.018,
+                                            fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
@@ -739,7 +739,7 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                           style: TextStyle(
                                               color: Color(0xFF434A54)
                                                   .withOpacity(0.7),
-                                              fontSize: size.height * 0.018,
+                                              fontSize: size.height * 0.02,
                                               fontWeight: FontWeight.w100,
                                               letterSpacing: 1,
                                               fontFamily: 'ConcertOne'),
@@ -853,8 +853,9 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                     'Current CPI of 7.5 on scale of 10',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                        color: secondYearColor.withOpacity(0.6),
-                                        fontSize: size.height * 0.018,
+                                        color:
+                                            Color(0xFFDA4453).withOpacity(0.8),
+                                        fontSize: size.height * 0.02,
                                         fontWeight: FontWeight.w100,
                                         letterSpacing: 1,
                                         fontFamily: 'ConcertOne'),
@@ -885,8 +886,8 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                             '10 CGPA in X and 92.8% in XII',
                             textAlign: TextAlign.end,
                             style: TextStyle(
-                                color: secondYearColor.withOpacity(0.6),
-                                fontSize: size.height * 0.018,
+                                color: Color(0xFFDA4453).withOpacity(0.8),
+                                fontSize: size.height * 0.02,
                                 fontWeight: FontWeight.w100,
                                 letterSpacing: 1,
                                 fontFamily: 'ConcertOne'),
@@ -902,169 +903,173 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
               ),
               Spacer(),
               FittedBox(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                  ),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: size.width * 0.04,
-                        height: 1,
-                        child: Divider(
-                          thickness: 1,
-                          color: Color(0xFF434A54),
-                        ),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: size.width * 0.04,
+                      height: 1,
+                      child: Divider(
+                        thickness: 1,
+                        color: Color(0xFF434A54),
                       ),
-                      SizedBox(
-                        width: size.width * 0.01,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    InkWell(
+                      onHover: (bool x) {
+                        setState(() {
+                          if (x) {
+                            linkedInColor = Color(0xFFDA4453);
+                          } else {
+                            linkedInColor = Color(0xFF434A54);
+                          }
+                        });
+                      },
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      child: SocialMediaButton.linkedin(
+                        url:
+                            "https://www.linkedin.com/in/manish-pandey-8a4213179/",
+                        size: size.height * 0.03,
+                        color: linkedInColor,
                       ),
-                      InkWell(
-                        onHover: (bool x) {
-                          setState(() {
-                            if (x) {
-                              linkedInColor = Color(0xFFDA4453);
-                            } else {
-                              linkedInColor = Color(0xFF434A54);
-                            }
-                          });
-                        },
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        child: SocialMediaButton.linkedin(
-                          url:
-                              "https://www.linkedin.com/in/manish-pandey-8a4213179/",
-                          size: size.height * 0.03,
-                          color: linkedInColor,
-                        ),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    CircleAvatar(
+                      radius: size.height * 0.003,
+                      backgroundColor: Color(0xFF434A54).withOpacity(0.5),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    InkWell(
+                      onHover: (bool x) {
+                        setState(() {
+                          if (x) {
+                            githubColor = Color(0xFFDA4453);
+                          } else {
+                            githubColor = Color(0xFF434A54);
+                          }
+                        });
+                      },
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      child: SocialMediaButton.github(
+                        url: "https://github.com/manishpandeyvp",
+                        size: size.height * 0.03,
+                        color: githubColor,
                       ),
-                      SizedBox(
-                        width: size.width * 0.01,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    CircleAvatar(
+                      radius: size.height * 0.003,
+                      backgroundColor: Color(0xFF434A54).withOpacity(0.5),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    InkWell(
+                      onHover: (bool x) {
+                        setState(() {
+                          if (x) {
+                            googleColor = Color(0xFFDA4453);
+                          } else {
+                            googleColor = Color(0xFF434A54);
+                          }
+                        });
+                      },
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      child: SocialMediaButton.google(
+                        url: "mailto:2018140@iiitdmj.ac.in",
+                        size: size.height * 0.03,
+                        color: googleColor,
                       ),
-                      CircleAvatar(
-                        radius: size.height * 0.003,
-                        backgroundColor: Color(0xFF434A54).withOpacity(0.5),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    CircleAvatar(
+                      radius: size.height * 0.003,
+                      backgroundColor: Color(0xFF434A54).withOpacity(0.5),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    InkWell(
+                      onHover: (bool x) {
+                        setState(() {
+                          if (x) {
+                            fbColor = Color(0xFFDA4453);
+                          } else {
+                            fbColor = Color(0xFF434A54);
+                          }
+                        });
+                      },
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      child: SocialMediaButton.facebook(
+                        url: "https://www.facebook.com/manishpandeyvp/",
+                        size: size.height * 0.03,
+                        color: fbColor,
                       ),
-                      SizedBox(
-                        width: size.width * 0.01,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    CircleAvatar(
+                      radius: size.height * 0.003,
+                      backgroundColor: Color(0xFF434A54).withOpacity(0.5),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    InkWell(
+                      onHover: (bool x) {
+                        setState(() {
+                          if (x) {
+                            instagramColor = Color(0xFFDA4453);
+                          } else {
+                            instagramColor = Color(0xFF434A54);
+                          }
+                        });
+                      },
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      child: SocialMediaButton.instagram(
+                        url: "https://www.instagram.com/_.wubba_lubba_dub_dub/",
+                        size: size.height * 0.03,
+                        color: instagramColor,
                       ),
-                      InkWell(
-                        onHover: (bool x) {
-                          setState(() {
-                            if (x) {
-                              githubColor = Color(0xFFDA4453);
-                            } else {
-                              githubColor = Color(0xFF434A54);
-                            }
-                          });
-                        },
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        child: SocialMediaButton.github(
-                          url: "https://github.com/manishpandeyvp",
-                          size: size.height * 0.03,
-                          color: githubColor,
-                        ),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.01,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.04,
+                      height: 1,
+                      child: Divider(
+                        thickness: 1,
+                        color: Color(0xFF434A54),
                       ),
-                      SizedBox(
-                        width: size.width * 0.01,
-                      ),
-                      CircleAvatar(
-                        radius: size.height * 0.003,
-                        backgroundColor: Color(0xFF434A54).withOpacity(0.5),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.01,
-                      ),
-                      InkWell(
-                        onHover: (bool x) {
-                          setState(() {
-                            if (x) {
-                              googleColor = Color(0xFFDA4453);
-                            } else {
-                              googleColor = Color(0xFF434A54);
-                            }
-                          });
-                        },
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        child: SocialMediaButton.google(
-                          url: null,
-                          size: size.height * 0.03,
-                          color: googleColor,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.01,
-                      ),
-                      CircleAvatar(
-                        radius: size.height * 0.003,
-                        backgroundColor: Color(0xFF434A54).withOpacity(0.5),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.01,
-                      ),
-                      InkWell(
-                        onHover: (bool x) {
-                          setState(() {
-                            if (x) {
-                              fbColor = Color(0xFFDA4453);
-                            } else {
-                              fbColor = Color(0xFF434A54);
-                            }
-                          });
-                        },
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        child: SocialMediaButton.facebook(
-                          url: "https://www.facebook.com/manishpandeyvp/",
-                          size: size.height * 0.03,
-                          color: fbColor,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.01,
-                      ),
-                      CircleAvatar(
-                        radius: size.height * 0.003,
-                        backgroundColor: Color(0xFF434A54).withOpacity(0.5),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.01,
-                      ),
-                      InkWell(
-                        onHover: (bool x) {
-                          setState(() {
-                            if (x) {
-                              instagramColor = Color(0xFFDA4453);
-                            } else {
-                              instagramColor = Color(0xFF434A54);
-                            }
-                          });
-                        },
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        child: SocialMediaButton.instagram(
-                          url:
-                              "https://www.instagram.com/_.wubba_lubba_dub_dub/",
-                          size: size.height * 0.03,
-                          color: instagramColor,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.01,
-                      ),
-                      SizedBox(
-                        width: size.width * 0.04,
-                        height: 1,
-                        child: Divider(
-                          thickness: 1,
-                          color: Color(0xFF434A54),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Text('designed by manish pandey',
+                    style: TextStyle(
+                        color: Color(0xFF434A54).withOpacity(0.6),
+                        fontSize: size.height * 0.016,
+                        fontWeight: FontWeight.w100,
+                        letterSpacing: 1,
+                        fontFamily: 'MuseoModerno')),
               ),
             ],
           ),

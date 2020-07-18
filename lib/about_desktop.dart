@@ -66,11 +66,8 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                             child: InkWell(
                               onTap: () {
                                 setState(() {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              HomeDesktopScreen()));
+                                  Navigator.push(context,
+                                      FadeRoute(page: HomeDesktopScreen()));
                                 });
                               },
                               onHover: (bool x) {
@@ -159,12 +156,8 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                               hoverColor: Colors.transparent,
                               onTap: () {
                                 setState(() {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            ProjectDesktopScreen()),
-                                  );
+                                  Navigator.push(context,
+                                      FadeRoute(page: ProjectDesktopScreen()));
                                 });
                               },
                               child: Text(
@@ -174,7 +167,6 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                   fontSize: size.height * 0.02,
                                   fontWeight: FontWeight.w700,
                                   letterSpacing: 2,
-//                                  decoration: TextDecoration.underline,
                                 ),
                               ),
                             ),
@@ -222,19 +214,17 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                                   SizedBox(
                                     width: size.width * 0.01,
                                   ),
-                                  FittedBox(
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 2),
-                                      child: InkWell(
-                                        child: Text(
-                                          'My Story!',
-                                          style: TextStyle(
-                                              color: Color(0xFFDA4453),
-                                              fontSize: size.height * 0.05,
-                                              fontWeight: FontWeight.w700,
-                                              letterSpacing: 2,
-                                              fontFamily: 'ConcertOne'),
-                                        ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 2),
+                                    child: InkWell(
+                                      child: Text(
+                                        'My Story!',
+                                        style: TextStyle(
+                                            color: Color(0xFFDA4453),
+                                            fontSize: size.height * 0.05,
+                                            fontWeight: FontWeight.w700,
+                                            letterSpacing: 2,
+                                            fontFamily: 'ConcertOne'),
                                       ),
                                     ),
                                   ),
@@ -255,127 +245,121 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                           ),
                           Visibility(
                             visible: preFinalYearVisibility,
-                            child: FittedBox(
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    secondYearVisibility = false;
-                                    firstYearVisibility = false;
-                                    schoolDaysVisibility = false;
-                                    preFinalYearDescVisibility = true;
-                                    sizedBoxVisibility1 = false;
-                                    sizedBoxVisibility2 = false;
-                                    sizedBoxVisibility3 = false;
-                                  });
-                                },
-                                onHover: (bool x) {
-                                  setState(() {
-                                    if (x) {
-                                      preFinalYearColor = Color(0xFFDA4453);
-                                    } else {
-                                      preFinalYearColor =
-                                          Color(0xFF434A54).withOpacity(0.7);
-                                    }
-                                  });
-                                },
-                                hoverColor: Colors.transparent,
-                                child: Container(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          SizedBox(
-                                            width: size.width * 0.05,
-                                            height: 1,
-                                            child: Divider(
-                                              thickness: 1,
-                                              color: preFinalYearColor,
-                                            ),
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  secondYearVisibility = false;
+                                  firstYearVisibility = false;
+                                  schoolDaysVisibility = false;
+                                  preFinalYearDescVisibility = true;
+                                  sizedBoxVisibility1 = false;
+                                  sizedBoxVisibility2 = false;
+                                  sizedBoxVisibility3 = false;
+                                });
+                              },
+                              onHover: (bool x) {
+                                setState(() {
+                                  if (x) {
+                                    preFinalYearColor = Color(0xFFDA4453);
+                                  } else {
+                                    preFinalYearColor =
+                                        Color(0xFF434A54).withOpacity(0.7);
+                                  }
+                                });
+                              },
+                              hoverColor: Colors.transparent,
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: size.width * 0.05,
+                                          height: 1,
+                                          child: Divider(
+                                            thickness: 1,
+                                            color: preFinalYearColor,
                                           ),
-                                          SizedBox(
-                                            width: size.width * 0.01,
-                                          ),
-                                          FittedBox(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 2),
-                                              child: InkWell(
-                                                child: Text(
-                                                  'PRE FINAL YEAR',
-                                                  style: TextStyle(
-                                                    color: preFinalYearColor
-                                                        .withOpacity(0.7),
-                                                    fontSize:
-                                                        size.height * 0.018,
-                                                    fontWeight: FontWeight.w700,
-                                                    letterSpacing: 2,
-                                                  ),
-                                                ),
+                                        ),
+                                        SizedBox(
+                                          width: size.width * 0.01,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 2),
+                                          child: InkWell(
+                                            child: Text(
+                                              'PRE FINAL YEAR',
+                                              style: TextStyle(
+                                                color: preFinalYearColor
+                                                    .withOpacity(0.7),
+                                                fontSize: size.height * 0.018,
+                                                fontWeight: FontWeight.w700,
+                                                letterSpacing: 2,
                                               ),
                                             ),
                                           ),
-                                        ],
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      'Gonna start soon...!!',
+                                      style: TextStyle(
+                                          color: preFinalYearColor
+                                              .withOpacity(0.7),
+                                          fontSize: size.height * 0.02,
+                                          fontWeight: FontWeight.w100,
+                                          letterSpacing: 1,
+                                          fontFamily: 'ConcertOne'),
+                                    ),
+                                    Visibility(
+                                      visible: preFinalYearDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Text(
-                                        'Gonna start soon...!!',
+                                    ),
+                                    Visibility(
+                                      visible: preFinalYearDescVisibility,
+                                      child: Text(
+                                        '......... | ............... | .................... ',
                                         style: TextStyle(
-                                            color: preFinalYearColor
+                                            color: Color(0xFF434A54)
                                                 .withOpacity(0.7),
                                             fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
                                       ),
-                                      Visibility(
-                                        visible: preFinalYearDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
+                                    ),
+                                    Visibility(
+                                      visible: preFinalYearDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Visibility(
+                                    ),
+                                    Visibility(
                                         visible: preFinalYearDescVisibility,
-                                        child: Text(
-                                          '......... | ............... | .................... ',
-                                          style: TextStyle(
-                                              color: Color(0xFF434A54)
-                                                  .withOpacity(0.7),
-                                              fontSize: size.height * 0.02,
-                                              fontWeight: FontWeight.w100,
-                                              letterSpacing: 1,
-                                              fontFamily: 'ConcertOne'),
-                                        ),
-                                      ),
-                                      Visibility(
-                                        visible: preFinalYearDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
-                                      ),
-                                      Visibility(
-                                          visible: preFinalYearDescVisibility,
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                secondYearVisibility = true;
-                                                firstYearVisibility = true;
-                                                schoolDaysVisibility = true;
-                                                preFinalYearDescVisibility =
-                                                    false;
-                                                sizedBoxVisibility1 = true;
-                                                sizedBoxVisibility2 = true;
-                                                sizedBoxVisibility3 = true;
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.arrow_back,
-                                              size: size.height * 0.05,
-                                              color: Color(0xFFDA4453),
-                                            ),
-                                          )),
-                                    ],
-                                  ),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              secondYearVisibility = true;
+                                              firstYearVisibility = true;
+                                              schoolDaysVisibility = true;
+                                              preFinalYearDescVisibility =
+                                                  false;
+                                              sizedBoxVisibility1 = true;
+                                              sizedBoxVisibility2 = true;
+                                              sizedBoxVisibility3 = true;
+                                            });
+                                          },
+                                          child: Icon(
+                                            Icons.arrow_back,
+                                            size: size.height * 0.05,
+                                            color: Color(0xFFDA4453),
+                                          ),
+                                        )),
+                                  ],
                                 ),
                               ),
                             ),
@@ -388,127 +372,122 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                           ),
                           Visibility(
                             visible: secondYearVisibility,
-                            child: FittedBox(
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    preFinalYearVisibility = false;
-                                    firstYearVisibility = false;
-                                    schoolDaysVisibility = false;
-                                    secondYearDescVisibility = true;
-                                    sizedBoxVisibility1 = false;
-                                    sizedBoxVisibility2 = false;
-                                    sizedBoxVisibility3 = false;
-                                  });
-                                },
-                                onHover: (bool x) {
-                                  setState(() {
-                                    if (x) {
-                                      secondYearColor = Color(0xFFDA4453);
-                                    } else {
-                                      secondYearColor =
-                                          Color(0xFF434A54).withOpacity(0.7);
-                                    }
-                                  });
-                                },
-                                hoverColor: Colors.transparent,
-                                child: Container(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          SizedBox(
-                                            width: size.width * 0.05,
-                                            height: 1,
-                                            child: Divider(
-                                              thickness: 1,
-                                              color: secondYearColor,
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  preFinalYearVisibility = false;
+                                  firstYearVisibility = false;
+                                  schoolDaysVisibility = false;
+                                  secondYearDescVisibility = true;
+                                  sizedBoxVisibility1 = false;
+                                  sizedBoxVisibility2 = false;
+                                  sizedBoxVisibility3 = false;
+                                });
+                              },
+                              onHover: (bool x) {
+                                setState(() {
+                                  if (x) {
+                                    secondYearColor = Color(0xFFDA4453);
+                                  } else {
+                                    secondYearColor =
+                                        Color(0xFF434A54).withOpacity(0.7);
+                                  }
+                                });
+                              },
+                              hoverColor: Colors.transparent,
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: size.width * 0.05,
+                                          height: 1,
+                                          child: Divider(
+                                            thickness: 1,
+                                            color: secondYearColor,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: size.width * 0.01,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 2),
+                                          child: Text(
+                                            'SECOND YEAR',
+                                            style: TextStyle(
+                                              color: secondYearColor
+                                                  .withOpacity(0.7),
+                                              fontSize: size.height * 0.018,
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 2,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: size.width * 0.01,
-                                          ),
-                                          FittedBox(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 2),
-                                              child: Text(
-                                                'SECOND YEAR',
-                                                style: TextStyle(
-                                                  color: secondYearColor
-                                                      .withOpacity(0.7),
-                                                  fontSize: size.height * 0.018,
-                                                  fontWeight: FontWeight.w700,
-                                                  letterSpacing: 2,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      'Python | Braille Keyboard | Flute | Ukelele | Event Coordinator and Club Associate | '
+                                      'Electronics Club | Saaz | Flutter | Lockdown',
+                                      style: TextStyle(
+                                          color:
+                                              secondYearColor.withOpacity(0.7),
+                                          fontSize: size.height * 0.02,
+                                          fontWeight: FontWeight.w100,
+                                          letterSpacing: 1,
+                                          fontFamily: 'ConcertOne'),
+                                    ),
+                                    Visibility(
+                                      visible: secondYearDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Text(
-                                        'Python | Braille Keyboard | Flute | Ukelele | Event Coordinator and Club Associate | '
-                                        'Electronics Club |\nSaaz | Flutter | Lockdown',
+                                    ),
+                                    Visibility(
+                                      visible: secondYearDescVisibility,
+                                      child: Text(
+                                        'In my Sophomore year at the College, I started learning Python. Continued the same theme'
+                                        'of my project, I developed a Braille Keyboard with my team under Prof Biswajeet. I learnt '
+                                        'how to play the Ukelele,  and the Flute. In te latter months of my time as a sophomore, '
+                                        'I fell in love with Flutter, a hybrid app/web/desktop development platform, which has had me hooked.',
                                         style: TextStyle(
-                                            color: secondYearColor
+                                            color: Color(0xFF434A54)
                                                 .withOpacity(0.7),
                                             fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
                                       ),
-                                      Visibility(
-                                        visible: secondYearDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
+                                    ),
+                                    Visibility(
+                                      visible: secondYearDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Visibility(
+                                    ),
+                                    Visibility(
                                         visible: secondYearDescVisibility,
-                                        child: Text(
-                                          'This is Manish Kumar Pandey. Electronics and Communication Engineer,'
-                                          'and a Flutter Developer \nhaving interests in Android App Designing, '
-                                          'Web App Designing, and Data Science.',
-                                          style: TextStyle(
-                                              color: Color(0xFF434A54)
-                                                  .withOpacity(0.7),
-                                              fontSize: size.height * 0.02,
-                                              fontWeight: FontWeight.w100,
-                                              letterSpacing: 1,
-                                              fontFamily: 'ConcertOne'),
-                                        ),
-                                      ),
-                                      Visibility(
-                                        visible: secondYearDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
-                                      ),
-                                      Visibility(
-                                          visible: secondYearDescVisibility,
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                preFinalYearVisibility = true;
-                                                firstYearVisibility = true;
-                                                schoolDaysVisibility = true;
-                                                secondYearDescVisibility =
-                                                    false;
-                                                sizedBoxVisibility1 = true;
-                                                sizedBoxVisibility2 = true;
-                                                sizedBoxVisibility3 = true;
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.arrow_back,
-                                              size: size.height * 0.05,
-                                              color: Color(0xFFDA4453),
-                                            ),
-                                          )),
-                                    ],
-                                  ),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              preFinalYearVisibility = true;
+                                              firstYearVisibility = true;
+                                              schoolDaysVisibility = true;
+                                              secondYearDescVisibility = false;
+                                              sizedBoxVisibility1 = true;
+                                              sizedBoxVisibility2 = true;
+                                              sizedBoxVisibility3 = true;
+                                            });
+                                          },
+                                          child: Icon(
+                                            Icons.arrow_back,
+                                            size: size.height * 0.05,
+                                            color: Color(0xFFDA4453),
+                                          ),
+                                        )),
+                                  ],
                                 ),
                               ),
                             ),
@@ -521,126 +500,122 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                           ),
                           Visibility(
                             visible: firstYearVisibility,
-                            child: FittedBox(
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    preFinalYearVisibility = false;
-                                    secondYearVisibility = false;
-                                    schoolDaysVisibility = false;
-                                    firstYearDescVisibility = true;
-                                    sizedBoxVisibility1 = false;
-                                    sizedBoxVisibility2 = false;
-                                    sizedBoxVisibility3 = false;
-                                  });
-                                },
-                                onHover: (bool x) {
-                                  setState(() {
-                                    if (x) {
-                                      firstYearColor = Color(0xFFDA4453);
-                                    } else {
-                                      firstYearColor =
-                                          Color(0xFF434A54).withOpacity(0.7);
-                                    }
-                                  });
-                                },
-                                hoverColor: Colors.transparent,
-                                child: Container(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          SizedBox(
-                                            width: size.width * 0.05,
-                                            height: 1,
-                                            child: Divider(
-                                              thickness: 1,
-                                              color: firstYearColor,
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  preFinalYearVisibility = false;
+                                  secondYearVisibility = false;
+                                  schoolDaysVisibility = false;
+                                  firstYearDescVisibility = true;
+                                  sizedBoxVisibility1 = false;
+                                  sizedBoxVisibility2 = false;
+                                  sizedBoxVisibility3 = false;
+                                });
+                              },
+                              onHover: (bool x) {
+                                setState(() {
+                                  if (x) {
+                                    firstYearColor = Color(0xFFDA4453);
+                                  } else {
+                                    firstYearColor =
+                                        Color(0xFF434A54).withOpacity(0.7);
+                                  }
+                                });
+                              },
+                              hoverColor: Colors.transparent,
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: size.width * 0.05,
+                                          height: 1,
+                                          child: Divider(
+                                            thickness: 1,
+                                            color: firstYearColor,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: size.width * 0.01,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 2),
+                                          child: Text(
+                                            'FIRST YEAR',
+                                            style: TextStyle(
+                                              color: firstYearColor
+                                                  .withOpacity(0.7),
+                                              fontSize: size.height * 0.018,
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 2,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: size.width * 0.01,
-                                          ),
-                                          FittedBox(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 2),
-                                              child: Text(
-                                                'FIRST YEAR',
-                                                style: TextStyle(
-                                                  color: firstYearColor
-                                                      .withOpacity(0.7),
-                                                  fontSize: size.height * 0.018,
-                                                  fontWeight: FontWeight.w700,
-                                                  letterSpacing: 2,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      'C | Basic Blind Stick | Content Developer | Electronics Club | Saaz | Guitar | '
+                                      'Restro Automation | First Runner Up | Second Runner Up',
+                                      style: TextStyle(
+                                          color:
+                                              firstYearColor.withOpacity(0.7),
+                                          fontSize: size.height * 0.02,
+                                          fontWeight: FontWeight.w100,
+                                          letterSpacing: 1,
+                                          fontFamily: 'ConcertOne'),
+                                    ),
+                                    Visibility(
+                                      visible: firstYearDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Text(
-                                        'C | Basic Blind Stick | Content Developer | Electronics Club | Saaz | Guitar | '
-                                        'Restro Automation |\nFirst Runner Up | Second Runner Up',
+                                    ),
+                                    Visibility(
+                                      visible: firstYearDescVisibility,
+                                      child: Text(
+                                        'My introduction to IIITDMJ and College life was in 2018. I started learning how to code in '
+                                        'C. As a project taken under Prof Biswajeet, we developed a Blind Stick, which was given a lot '
+                                        'of praise. Did an internship at Toppr, and learnt hoe to play Guitar. I was first and '
+                                        'second runner up in LED Matrix and Circuit Master at Abhikalpan\'19.',
                                         style: TextStyle(
-                                            color:
-                                                firstYearColor.withOpacity(0.7),
+                                            color: Color(0xFF434A54)
+                                                .withOpacity(0.7),
                                             fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
                                       ),
-                                      Visibility(
-                                        visible: firstYearDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
+                                    ),
+                                    Visibility(
+                                      visible: firstYearDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Visibility(
+                                    ),
+                                    Visibility(
                                         visible: firstYearDescVisibility,
-                                        child: Text(
-                                          'This is Manish Kumar Pandey. Electronics and Communication Engineer,'
-                                          'and a Flutter Developer \nhaving interests in Android App Designing, '
-                                          'Web App Designing, and Data Science.',
-                                          style: TextStyle(
-                                              color: Color(0xFF434A54)
-                                                  .withOpacity(0.7),
-                                              fontSize: size.height * 0.02,
-                                              fontWeight: FontWeight.w100,
-                                              letterSpacing: 1,
-                                              fontFamily: 'ConcertOne'),
-                                        ),
-                                      ),
-                                      Visibility(
-                                        visible: firstYearDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
-                                      ),
-                                      Visibility(
-                                          visible: firstYearDescVisibility,
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                secondYearVisibility = true;
-                                                preFinalYearVisibility = true;
-                                                schoolDaysVisibility = true;
-                                                firstYearDescVisibility = false;
-                                                sizedBoxVisibility1 = true;
-                                                sizedBoxVisibility2 = true;
-                                                sizedBoxVisibility3 = true;
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.arrow_back,
-                                              size: size.height * 0.05,
-                                              color: Color(0xFFDA4453),
-                                            ),
-                                          )),
-                                    ],
-                                  ),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              secondYearVisibility = true;
+                                              preFinalYearVisibility = true;
+                                              schoolDaysVisibility = true;
+                                              firstYearDescVisibility = false;
+                                              sizedBoxVisibility1 = true;
+                                              sizedBoxVisibility2 = true;
+                                              sizedBoxVisibility3 = true;
+                                            });
+                                          },
+                                          child: Icon(
+                                            Icons.arrow_back,
+                                            size: size.height * 0.05,
+                                            color: Color(0xFFDA4453),
+                                          ),
+                                        )),
+                                  ],
                                 ),
                               ),
                             ),
@@ -653,127 +628,122 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
                           ),
                           Visibility(
                             visible: schoolDaysVisibility,
-                            child: FittedBox(
-                              child: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    preFinalYearVisibility = false;
-                                    secondYearVisibility = false;
-                                    firstYearVisibility = false;
-                                    schoolDaysDescVisibility = true;
-                                    sizedBoxVisibility1 = false;
-                                    sizedBoxVisibility2 = false;
-                                    sizedBoxVisibility3 = false;
-                                  });
-                                },
-                                onHover: (bool x) {
-                                  setState(() {
-                                    if (x) {
-                                      schoolDaysColor = Color(0xFFDA4453);
-                                    } else {
-                                      schoolDaysColor =
-                                          Color(0xFF434A54).withOpacity(0.7);
-                                    }
-                                  });
-                                },
-                                hoverColor: Colors.transparent,
-                                child: Container(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          SizedBox(
-                                            width: size.width * 0.05,
-                                            height: 1,
-                                            child: Divider(
-                                              thickness: 1,
-                                              color: schoolDaysColor,
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  preFinalYearVisibility = false;
+                                  secondYearVisibility = false;
+                                  firstYearVisibility = false;
+                                  schoolDaysDescVisibility = true;
+                                  sizedBoxVisibility1 = false;
+                                  sizedBoxVisibility2 = false;
+                                  sizedBoxVisibility3 = false;
+                                });
+                              },
+                              onHover: (bool x) {
+                                setState(() {
+                                  if (x) {
+                                    schoolDaysColor = Color(0xFFDA4453);
+                                  } else {
+                                    schoolDaysColor =
+                                        Color(0xFF434A54).withOpacity(0.7);
+                                  }
+                                });
+                              },
+                              hoverColor: Colors.transparent,
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: size.width * 0.05,
+                                          height: 1,
+                                          child: Divider(
+                                            thickness: 1,
+                                            color: schoolDaysColor,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: size.width * 0.01,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 2),
+                                          child: Text(
+                                            'SCHOOL DAYS',
+                                            style: TextStyle(
+                                              color: schoolDaysColor
+                                                  .withOpacity(0.7),
+                                              fontSize: size.height * 0.018,
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 2,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: size.width * 0.01,
-                                          ),
-                                          FittedBox(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 2),
-                                              child: Text(
-                                                'SCHOOL DAYS',
-                                                style: TextStyle(
-                                                  color: schoolDaysColor
-                                                      .withOpacity(0.7),
-                                                  fontSize: size.height * 0.018,
-                                                  fontWeight: FontWeight.w700,
-                                                  letterSpacing: 2,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      'BS&G | Class & House Representative | Volunteering | Olympiads | Drawing Competitions | '
+                                      'Testing Camps ',
+                                      style: TextStyle(
+                                          color:
+                                              schoolDaysColor.withOpacity(0.7),
+                                          fontSize: size.height * 0.02,
+                                          fontWeight: FontWeight.w100,
+                                          letterSpacing: 1,
+                                          fontFamily: 'ConcertOne'),
+                                    ),
+                                    Visibility(
+                                      visible: schoolDaysDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Text(
-                                        'BS&G | Class & House Representative | Volunteering | Olympiads | Drawing Competitions | '
-                                        'Testing Camps ',
+                                    ),
+                                    Visibility(
+                                      visible: schoolDaysDescVisibility,
+                                      child: Text(
+                                        'In the time before I started my undergraduate studies, I was a student at the Kendriya Vidyalaya. '
+                                        'While there, I had been the class representative. I had also been awarded the Rashtrapati Award '
+                                        'in Bharat Scouts and Guides. I participated and won in a few drawing competitions too. '
+                                        'Volunteering in the 2014 Lok Sabha elections was a highlight in my time at school.',
                                         style: TextStyle(
-                                            color: schoolDaysColor
+                                            color: Color(0xFF434A54)
                                                 .withOpacity(0.7),
                                             fontSize: size.height * 0.02,
                                             fontWeight: FontWeight.w100,
                                             letterSpacing: 1,
                                             fontFamily: 'ConcertOne'),
                                       ),
-                                      Visibility(
-                                        visible: schoolDaysDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
+                                    ),
+                                    Visibility(
+                                      visible: schoolDaysDescVisibility,
+                                      child: SizedBox(
+                                        height: size.height * 0.05,
                                       ),
-                                      Visibility(
+                                    ),
+                                    Visibility(
                                         visible: schoolDaysDescVisibility,
-                                        child: Text(
-                                          'This is Manish Kumar Pandey. Electronics and Communication Engineer,'
-                                          'and a Flutter Developer \nhaving interests in Android App Designing, '
-                                          'Web App Designing, and Data Science.',
-                                          style: TextStyle(
-                                              color: Color(0xFF434A54)
-                                                  .withOpacity(0.7),
-                                              fontSize: size.height * 0.02,
-                                              fontWeight: FontWeight.w100,
-                                              letterSpacing: 1,
-                                              fontFamily: 'ConcertOne'),
-                                        ),
-                                      ),
-                                      Visibility(
-                                        visible: schoolDaysDescVisibility,
-                                        child: SizedBox(
-                                          height: size.height * 0.05,
-                                        ),
-                                      ),
-                                      Visibility(
-                                          visible: schoolDaysDescVisibility,
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                secondYearVisibility = true;
-                                                firstYearVisibility = true;
-                                                preFinalYearVisibility = true;
-                                                schoolDaysDescVisibility =
-                                                    false;
-                                                sizedBoxVisibility1 = true;
-                                                sizedBoxVisibility2 = true;
-                                                sizedBoxVisibility3 = true;
-                                              });
-                                            },
-                                            child: Icon(
-                                              Icons.arrow_back,
-                                              size: size.height * 0.05,
-                                              color: Color(0xFFDA4453),
-                                            ),
-                                          )),
-                                    ],
-                                  ),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              secondYearVisibility = true;
+                                              firstYearVisibility = true;
+                                              preFinalYearVisibility = true;
+                                              schoolDaysDescVisibility = false;
+                                              sizedBoxVisibility1 = true;
+                                              sizedBoxVisibility2 = true;
+                                              sizedBoxVisibility3 = true;
+                                            });
+                                          },
+                                          child: Icon(
+                                            Icons.arrow_back,
+                                            size: size.height * 0.05,
+                                            color: Color(0xFFDA4453),
+                                          ),
+                                        )),
+                                  ],
                                 ),
                               ),
                             ),
@@ -1075,4 +1045,27 @@ class _AboutDesktopScreenState extends State<AboutDesktopScreen> {
           ),
         ));
   }
+}
+
+class FadeRoute extends PageRouteBuilder {
+  final Widget page;
+  FadeRoute({this.page})
+      : super(
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
 }

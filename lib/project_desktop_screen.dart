@@ -73,11 +73,8 @@ class _ProjectDesktopScreenState extends State<ProjectDesktopScreen> {
                             child: InkWell(
                               onTap: () {
                                 setState(() {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              HomeDesktopScreen()));
+                                  Navigator.push(context,
+                                      FadeRoute(page: HomeDesktopScreen()));
                                 });
                               },
                               onHover: (bool x) {
@@ -134,11 +131,8 @@ class _ProjectDesktopScreenState extends State<ProjectDesktopScreen> {
                               hoverColor: Colors.transparent,
                               onTap: () {
                                 setState(() {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              AboutDesktopScreen()));
+                                  Navigator.push(context,
+                                      FadeRoute(page: AboutDesktopScreen()));
                                 });
                               },
                               child: Text(
@@ -805,4 +799,27 @@ class PrContainer extends StatelessWidget {
       ),
     );
   }
+}
+
+class FadeRoute extends PageRouteBuilder {
+  final Widget page;
+  FadeRoute({this.page})
+      : super(
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
 }

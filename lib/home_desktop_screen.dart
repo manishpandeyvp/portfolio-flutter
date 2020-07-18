@@ -84,7 +84,6 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                       fontSize: size.height * 0.02,
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 2,
-//                                  decoration: TextDecoration.underline,
                                     ),
                                   ),
                                 ),
@@ -119,15 +118,12 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                       }
                                     });
                                   },
-//                                  hoverColor: Color(0xFFDA4453),
                                   onTap: () {
                                     setState(() {
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                AboutDesktopScreen()),
-                                      );
+                                          context,
+                                          FadeRoute(
+                                              page: AboutDesktopScreen()));
                                     });
                                   },
                                   child: Text(
@@ -137,7 +133,6 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                       fontSize: size.height * 0.02,
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 2,
-//                                  decoration: TextDecoration.underline,
                                     ),
                                   ),
                                 ),
@@ -177,11 +172,9 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                   onTap: () {
                                     setState(() {
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                ProjectDesktopScreen()),
-                                      );
+                                          context,
+                                          FadeRoute(
+                                              page: ProjectDesktopScreen()));
                                     });
                                   },
                                   child: Text(
@@ -191,7 +184,6 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                                       fontSize: size.height * 0.02,
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 2,
-//                                  decoration: TextDecoration.underline,
                                     ),
                                   ),
                                 ),
@@ -531,4 +523,27 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
           ],
         ));
   }
+}
+
+class FadeRoute extends PageRouteBuilder {
+  final Widget page;
+  FadeRoute({this.page})
+      : super(
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
 }
